@@ -1,0 +1,192 @@
+/* Hero section styles for T-ÉLIXIR */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-block: var(--space-24);
+  background: radial-gradient(circle at top left, rgba(212, 185, 113, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 20%),
+    var(--theme-background-default);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-20);
+  align-items: center;
+  min-height: calc(100vh - var(--space-24) * 2);
+}
+
+.hero-copy {
+  max-width: 42rem;
+  color: var(--theme-text-default);
+}
+
+.hero-eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-grey-400);
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.hero-subtitle {
+  margin: var(--space-6) 0 var(--space-8);
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.1;
+}
+
+.hero-description {
+  margin: 0 0 var(--space-12);
+  max-width: 38rem;
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body);
+  color: var(--color-grey-200);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.hero-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero-media__placeholder {
+  position: relative;
+  width: min(36rem, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-3xl);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-luxury-glow);
+}
+
+.hero-media__highlight,
+.hero-media__frame {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.hero-media__highlight {
+  background: radial-gradient(circle at top, rgba(212, 185, 113, 0.18), transparent 42%);
+}
+
+.hero-media__frame {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-decoratives {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-decorative {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  filter: blur(24px);
+}
+
+.hero-decorative--soft {
+  width: 12rem;
+  height: 12rem;
+  background: rgba(255, 255, 255, 0.08);
+  top: 8%;
+  left: 12%;
+}
+
+.hero-decorative--glow {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(212, 185, 113, 0.14);
+  bottom: 14%;
+  right: 8%;
+}
+
+.hero-decorative--light {
+  width: 8rem;
+  height: 8rem;
+  background: rgba(255, 255, 255, 0.06);
+  top: 40%;
+  right: 18%;
+}
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-8);
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+}
+
+.scroll-indicator__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--theme-accent);
+  animation: scroll-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(0.75rem);
+    opacity: 1;
+  }
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .hero-section {
+    padding-block: var(--space-16);
+  }
+
+  .hero-title {
+    font-size: clamp(2.75rem, 12vw, 4rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-media__placeholder {
+    width: 100%;
+  }
+}

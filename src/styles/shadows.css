@@ -1,0 +1,24 @@
+/* Shadow system for T-ÉLIXIR */
+
+:root {
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 18px 46px rgba(0, 0, 0, 0.08);
+  --shadow-large: 0 32px 80px rgba(0, 0, 0, 0.12);
+  --shadow-luxury-glow: 0 0 80px rgba(212, 185, 113, 0.16);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.shadow-large {
+  box-shadow: var(--shadow-large);
+}
+
+.shadow-luxury-glow {
+  box-shadow: var(--shadow-luxury-glow);
+}

@@ -1,0 +1,58 @@
+/* Motion and transition system for T-ÉLIXIR */
+
+:root {
+  --motion-duration-fast: 120ms;
+  --motion-duration-medium: 220ms;
+  --motion-duration-slow: 420ms;
+  --motion-duration-page: 560ms;
+  --motion-curve-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-curve-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-curve-luxury: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.transition-base {
+  transition-property: opacity, transform, box-shadow, background-color, color;
+  transition-duration: var(--motion-duration-medium);
+  transition-timing-function: var(--motion-curve-standard);
+}
+
+.transition-hover {
+  transition-duration: var(--motion-duration-fast);
+  transition-timing-function: var(--motion-curve-soft);
+}
+
+.transition-press {
+  transition-duration: var(--motion-duration-fast);
+  transition-timing-function: var(--motion-curve-standard);
+}
+
+.transition-focus {
+  transition-duration: var(--motion-duration-medium);
+  transition-timing-function: var(--motion-curve-luxury);
+}
+
+.page-transition-enter,
+.page-transition-leave {
+  transition: opacity var(--motion-duration-page) var(--motion-curve-luxury),
+    transform var(--motion-duration-page) var(--motion-curve-luxury);
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-leave-active {
+  opacity: 0;
+  transform: translateY(-16px);
+}

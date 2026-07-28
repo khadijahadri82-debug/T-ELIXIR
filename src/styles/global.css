@@ -1,0 +1,52 @@
+@import './variables.css';
+@import './theme.css';
+@import './typography.css';
+@import './spacing.css';
+@import './shadows.css';
+@import './animations.css';
+@import './hero.css';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--font-family-body);
+  color: var(--theme-text-default);
+  background: var(--theme-background-default);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--theme-background-default);
+  color: var(--theme-text-default);
+  font-family: var(--font-family-body);
+  line-height: var(--line-height-body);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
