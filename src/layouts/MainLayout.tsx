@@ -9,16 +9,6 @@ interface MainLayoutProps {
   children: ReactNode
 }
 
-function AnnouncementBar() {
-  return (
-    <section className="announcement-bar" aria-label="Site announcement">
-      <Container>
-        <p>Experience T-ÉLIXIR worldwide — the art of couture fragrance.</p>
-      </Container>
-    </section>
-  )
-}
-
 function HeaderNavigation() {
   return (
     <header className="site-header" aria-label="Primary site navigation">
@@ -62,14 +52,6 @@ function HeaderNavigation() {
         </Navbar>
       </Container>
     </header>
-  )
-}
-
-function ScrollProgressBar() {
-  return (
-    <div className="scroll-progress" aria-hidden="true">
-      <div className="scroll-progress__bar" />
-    </div>
   )
 }
 
@@ -142,9 +124,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       </a>
 
       <div id="top" />
-      <AnnouncementBar />
       <HeaderNavigation />
-      <ScrollProgressBar />
 
       <main className="main-content" aria-label="Page content">
         <Container>{children}</Container>
