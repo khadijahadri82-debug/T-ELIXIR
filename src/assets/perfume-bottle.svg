@@ -1,0 +1,77 @@
+<svg width="1400" height="1800" viewBox="0 0 1400 1800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassBase" x1="430" y1="260" x2="970" y2="1540" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F9FCFF" />
+      <stop offset="0.3" stop-color="#DCE9F2" />
+      <stop offset="0.7" stop-color="#AFC3D3" />
+      <stop offset="1" stop-color="#5C7385" />
+    </linearGradient>
+    <linearGradient id="glassEdge" x1="460" y1="320" x2="940" y2="1530" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="0.5" stop-color="#F8FCFF" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#6F8390" stop-opacity="0.55" />
+    </linearGradient>
+    <linearGradient id="liquid" x1="520" y1="420" x2="900" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C9972E" />
+      <stop offset="0.45" stop-color="#A46E12" />
+      <stop offset="1" stop-color="#5B2C09" />
+    </linearGradient>
+    <linearGradient id="capGrad" x1="470" y1="220" x2="930" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111111" />
+      <stop offset="1" stop-color="#060606" />
+    </linearGradient>
+    <linearGradient id="sprayer" x1="520" y1="110" x2="880" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8A93D" />
+      <stop offset="0.5" stop-color="#B77D14" />
+      <stop offset="1" stop-color="#7A4707" />
+    </linearGradient>
+    <linearGradient id="labelGrad" x1="470" y1="580" x2="930" y2="980" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070707" />
+      <stop offset="1" stop-color="#020202" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1400" height="1800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="24" />
+      <feGaussianBlur stdDeviation="28" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.04 0 0 0 0 0.03 0 0 0 0 0.02 0 0 0 0.35 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_11_2" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_11_2" result="shape" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="700" cy="1550" rx="240" ry="70" fill="#000000" fill-opacity="0.16" />
+
+    <rect x="480" y="220" width="440" height="132" rx="56" fill="url(#capGrad)" />
+    <rect x="520" y="120" width="360" height="110" rx="42" fill="url(#sprayer)" />
+    <rect x="560" y="150" width="280" height="58" rx="20" fill="#D8A63A" fill-opacity="0.72" />
+
+    <path d="M470 380C470 310 520 260 590 260H810C880 260 930 310 930 380V420H470V380Z" fill="url(#glassBase)" />
+    <path d="M470 380C470 310 520 260 590 260H810C880 260 930 310 930 380V420H470V380Z" stroke="#F6FCFF" stroke-opacity="0.55" stroke-width="10" />
+
+    <rect x="470" y="420" width="460" height="860" rx="120" fill="url(#glassBase)" />
+    <rect x="470" y="420" width="460" height="860" rx="120" stroke="#F7FCFF" stroke-opacity="0.55" stroke-width="10" />
+    <rect x="480" y="430" width="440" height="840" rx="114" fill="url(#glassEdge)" fill-opacity="0.22" />
+
+    <rect x="510" y="450" width="380" height="780" rx="98" fill="url(#liquid)" fill-opacity="0.92" />
+    <rect x="500" y="440" width="400" height="780" rx="105" fill="url(#liquid)" fill-opacity="0.42" />
+
+    <rect x="520" y="560" width="360" height="520" rx="94" fill="url(#labelGrad)" />
+    <rect x="520" y="560" width="360" height="520" rx="94" stroke="#D3A54B" stroke-width="5" />
+
+    <path d="M535 690H865" stroke="#D3A54B" stroke-width="3" stroke-linecap="round" />
+    <path d="M535 726H865" stroke="#D3A54B" stroke-width="3" stroke-linecap="round" />
+    <path d="M535 762H865" stroke="#D3A54B" stroke-width="3" stroke-linecap="round" />
+
+    <text x="700" y="700" text-anchor="middle" fill="#F5F2EA" font-family="Georgia, 'Times New Roman', serif" font-size="44" letter-spacing="3" font-weight="700">Official T-É Monogram</text>
+    <text x="700" y="760" text-anchor="middle" fill="#F5F2EA" font-family="Georgia, 'Times New Roman', serif" font-size="68" letter-spacing="6" font-weight="700">T-ÉLIXIR</text>
+    <text x="700" y="830" text-anchor="middle" fill="#F5F2EA" font-family="Georgia, 'Times New Roman', serif" font-size="38" letter-spacing="5" font-weight="600">AZURE MIND</text>
+    <text x="700" y="930" text-anchor="middle" fill="#F5F2EA" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="1" font-weight="500">Inspired by Louis Vuitton Imagination</text>
+    <text x="700" y="1008" text-anchor="middle" fill="#F5F2EA" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="2" font-weight="600">30 ml | Eau de Parfum</text>
+
+    <path d="M525 420C525 380 556 350 598 350H802C844 350 875 380 875 420V440H525V420Z" fill="#FFFFFF" fill-opacity="0.12" />
+    <path d="M530 480C650 430 750 430 870 480" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="8" stroke-linecap="round" />
+    <path d="M520 1400C620 1440 780 1440 880 1400" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="6" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import { Button } from '../components/ui/Button'
 import { Container } from '../components/display/Container'
-import heroImage from '../assets/hero.png'
+import heroImage from '../assets/perfume-bottle.svg'
 
 export function HeroSection() {
   return (
