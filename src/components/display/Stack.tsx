@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
 export interface StackProps extends HTMLAttributes<HTMLDivElement> {
   align?: 'start' | 'center' | 'end' | 'stretch'

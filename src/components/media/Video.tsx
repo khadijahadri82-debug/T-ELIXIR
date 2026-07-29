@@ -1,4 +1,4 @@
-import { VideoHTMLAttributes } from 'react'
+import type { VideoHTMLAttributes } from 'react'
 
 export interface VideoProps extends VideoHTMLAttributes<HTMLVideoElement> {}
 
