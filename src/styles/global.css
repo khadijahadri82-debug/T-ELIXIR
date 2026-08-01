@@ -779,3 +779,227 @@ button {
     animation: none;
   }
 }
+
+/* Homepage cinematic motion layer */
+.home-experience {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(212, 185, 113, 0.045), transparent 30rem),
+    linear-gradient(180deg, #070503 0%, #0c0907 46%, #070503 100%);
+}
+
+.home-experience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.38;
+  background-image: radial-gradient(rgba(246, 241, 236, 0.12) 0.5px, transparent 0.5px);
+  background-size: 8px 8px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.home-experience > section {
+  position: relative;
+  z-index: 1;
+}
+
+.cinematic-motion-enabled .cinematic-reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, 2.25rem, 0);
+  transition: opacity 700ms var(--motion-curve-luxury), filter 700ms var(--motion-curve-luxury), transform 700ms var(--motion-curve-luxury);
+}
+
+.cinematic-motion-enabled .cinematic-reveal.is-cinematic-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-background {
+  transform: translate3d(0, var(--cinematic-background-offset, 0px), 0);
+  will-change: transform;
+}
+
+.hero-section::after {
+  transform: translate3d(var(--cinematic-pointer-x, 0px), var(--cinematic-glow-offset, 0px), 0);
+  will-change: transform;
+}
+
+.hero-media__glow {
+  transform: translate3d(var(--cinematic-pointer-x, 0px), var(--cinematic-pointer-y, 0px), 0);
+  will-change: transform;
+}
+
+.hero-title,
+.section-title {
+  text-wrap: balance;
+}
+
+.home-experience .section-title {
+  position: relative;
+  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.24);
+}
+
+.home-experience .section-title::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin: var(--space-4) auto 0;
+  background: linear-gradient(90deg, transparent, var(--theme-accent), transparent);
+  opacity: 0.72;
+}
+
+.brand-story-preview .section-title::after {
+  margin-inline: 0;
+}
+
+.featured-collection-preview,
+.luxury-experience-section,
+.brand-story-preview,
+.signature-fragrance-preview,
+.newsletter-cta {
+  background-blend-mode: screen, normal;
+}
+
+.featured-collection-preview::after,
+.brand-story-preview::after {
+  content: '';
+  position: absolute;
+  width: min(28rem, 52vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 185, 113, 0.1), transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.featured-collection-preview::after {
+  right: -12rem;
+  bottom: 4%;
+  transform: translate3d(var(--cinematic-pointer-x, 0px), var(--cinematic-pointer-y, 0px), 0);
+}
+
+.brand-story-preview::after {
+  top: 7%;
+  left: -14rem;
+  transform: translate3d(var(--cinematic-pointer-x, 0px), var(--cinematic-pointer-y, 0px), 0);
+}
+
+.featured-collection-preview__card,
+.luxury-experience-section__card,
+.brand-story-preview__frame,
+.home-experience .button {
+  transition-duration: 520ms;
+  transition-timing-function: var(--motion-curve-luxury);
+}
+
+.featured-collection-preview__card,
+.luxury-experience-section__card,
+.brand-story-preview__frame {
+  will-change: transform;
+}
+
+.featured-collection-preview__card::before,
+.luxury-experience-section__card::after,
+.brand-story-preview__frame::after {
+  background-position: 50% 50%;
+  transition: opacity 520ms var(--motion-curve-luxury), background-position 620ms var(--motion-curve-luxury);
+}
+
+.featured-collection-preview__card:hover::before,
+.luxury-experience-section__card:hover::after,
+.brand-story-preview__frame:hover::after {
+  background-position: 80% 20%;
+}
+
+.featured-collection-preview__card::before,
+.luxury-experience-section__card::after {
+  background-position: calc(50% + var(--cinematic-pointer-x, 0px)) calc(50% + var(--cinematic-pointer-y, 0px));
+}
+
+.brand-story-preview__frame:hover {
+  transform: translate3d(0, -6px, 0);
+  border-color: rgba(212, 185, 113, 0.56);
+  box-shadow: 0 38px 92px rgba(0, 0, 0, 0.52), 0 0 64px rgba(212, 185, 113, 0.16);
+}
+
+.signature-fragrance-preview,
+.newsletter-cta {
+  padding: clamp(4.5rem, 9vw, 8rem) 0;
+  text-align: center;
+  border-top: 1px solid rgba(212, 185, 113, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.025), rgba(212, 185, 113, 0.035));
+}
+
+.signature-fragrance-preview__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.7fr);
+  align-items: center;
+  max-width: 58rem;
+  margin: var(--space-10) auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(212, 185, 113, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.signature-fragrance-preview__visual {
+  min-height: 16rem;
+  background: radial-gradient(circle at 50% 46%, rgba(212, 185, 113, 0.32), transparent 17%), linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 55%);
+}
+
+.signature-fragrance-preview__text {
+  padding: var(--space-10);
+}
+
+.signature-fragrance-preview__description,
+.newsletter-cta__text {
+  margin: 0 0 var(--space-6);
+  color: var(--theme-text-muted);
+  line-height: 1.8;
+}
+
+.newsletter-cta .section-title::after,
+.signature-fragrance-preview .section-title::after {
+  margin-inline: auto;
+}
+
+.newsletter-cta .button,
+.signature-fragrance-preview .button {
+  border-color: rgba(212, 185, 113, 0.42);
+  color: var(--theme-accent);
+  box-shadow: inset 0 0 0 1px rgba(212, 185, 113, 0.08);
+}
+
+.newsletter-cta .button:hover,
+.signature-fragrance-preview .button:hover {
+  color: var(--theme-primary);
+  background: var(--theme-accent);
+  box-shadow: 0 0 32px rgba(212, 185, 113, 0.28);
+  transform: translate3d(0, -3px, 0);
+}
+
+@media (max-width: 720px) {
+  .signature-fragrance-preview__content { grid-template-columns: 1fr; }
+  .signature-fragrance-preview__visual { min-height: 12rem; }
+  .signature-fragrance-preview__text { padding: var(--space-8) var(--space-6); }
+  .home-experience::before { opacity: 0.2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-motion-enabled .cinematic-reveal,
+  .hero-background,
+  .hero-section::after,
+  .brand-story-preview__frame {
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
