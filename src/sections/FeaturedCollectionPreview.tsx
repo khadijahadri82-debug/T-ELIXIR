@@ -8,16 +8,22 @@ const products = [
   {
     name: 'T-ÉLIXIR Noir',
     inspiredBy: 'Inspired by Tom Ford Ombre Leather',
+    volume: '30 ml',
+    concentration: 'Eau de Parfum',
     price: '299 MAD',
   },
   {
     name: 'T-ÉLIXIR Gold',
     inspiredBy: 'Inspired by Baccarat Rouge 540',
+    volume: '30 ml',
+    concentration: 'Eau de Parfum',
     price: '349 MAD',
   },
   {
     name: 'T-ÉLIXIR Royal',
     inspiredBy: 'Inspired by Creed Aventus',
+    volume: '30 ml',
+    concentration: 'Eau de Parfum',
     price: '399 MAD',
   },
 ]
@@ -52,7 +58,7 @@ export function FeaturedCollectionPreview() {
       <Container>
         <div className="section-header featured-collection-preview__header">
           <div className="featured-collection-preview__intro">
-            <p className="featured-collection-preview__eyebrow">Curated edit</p>
+            <p className="featured-collection-preview__eyebrow">The house selection</p>
             <SectionTitle id="featured-collection-title">Featured Collection</SectionTitle>
             <p className="featured-collection-preview__subtitle">
               Discover our most iconic fragrances, crafted for timeless elegance.
@@ -78,12 +84,17 @@ export function FeaturedCollectionPreview() {
                 <div>
                   <h3 className="featured-collection-preview__name">{product.name}</h3>
                   <p className="featured-collection-preview__inspired-by">{product.inspiredBy}</p>
+                  <p className="featured-collection-preview__specification">
+                    {product.volume}
+                    <span aria-hidden="true"> · </span>
+                    {product.concentration}
+                  </p>
                 </div>
 
                 <div className="featured-collection-preview__meta">
                   <span className="featured-collection-preview__price">{product.price}</span>
                   <Button variant="outline" size="md" className="featured-collection-preview__button">
-                    Discover
+                    Explore Fragrance
                   </Button>
                 </div>
               </div>
