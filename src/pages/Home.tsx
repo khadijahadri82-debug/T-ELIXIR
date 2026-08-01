@@ -10,9 +10,9 @@ export function Home() {
     <>
       <HeroSection />
       <FeaturedCollectionPreview />
+      <LuxuryExperienceSection />
       <BrandStoryPreview />
       <SignatureFragrancePreview />
-      <LuxuryExperienceSection />
       <NewsletterCTA />
     </>
   )
