@@ -1,4 +1,5 @@
 import './styles/global.css'
+import './styles/collection.css'
 import './App.css'
 import { AppRouter } from './router/AppRouter'
 
