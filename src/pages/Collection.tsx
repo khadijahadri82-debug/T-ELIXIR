@@ -6,7 +6,16 @@ import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Chip } from '../components/ui/Chip'
 import { IconButton } from '../components/ui/IconButton'
-import heroImage from '../assets/perfume-bottle.svg'
+import productImageA from '../assets/images/A.png'
+import productImageB from '../assets/images/B.png'
+import productImageC from '../assets/images/C.png'
+import productImageD from '../assets/images/D.png'
+import productImageE from '../assets/images/E.png'
+import productImageF from '../assets/images/F.png'
+import productImageG from '../assets/images/G.png'
+import productImageH from '../assets/images/H.png'
+import productImageI from '../assets/images/I.png'
+import productImageJ from '../assets/images/J.png'
 
 type CollectionFilter = 'All' | 'Men' | 'Women' | 'Unisex' | 'Limited Edition' | 'Best Sellers' | 'New Arrivals'
 type SortOption = 'newest' | 'price-ascending' | 'price-descending' | 'rating' | 'popular'
@@ -20,19 +29,22 @@ interface Fragrance {
   rating: number
   popularity: number
   launchOrder: number
+  image: string
 }
 
 const filters: CollectionFilter[] = ['All', 'Men', 'Women', 'Unisex', 'Limited Edition', 'Best Sellers', 'New Arrivals']
 
 const fragrances: Fragrance[] = [
-  { id: 'noir', name: 'T-ÉLIXIR Noir', inspiredBy: 'Inspired by Tom Ford Ombre Leather', price: 299, categories: ['Men', 'Unisex', 'Best Sellers'], rating: 4.9, popularity: 98, launchOrder: 5 },
-  { id: 'royal', name: 'T-ÉLIXIR Royal', inspiredBy: 'Inspired by Creed Aventus', price: 399, categories: ['Men', 'Best Sellers'], rating: 4.8, popularity: 96, launchOrder: 4 },
-  { id: 'gold', name: 'T-ÉLIXIR Gold', inspiredBy: 'Inspired by Baccarat Rouge 540', price: 349, categories: ['Women', 'Unisex', 'Best Sellers'], rating: 4.9, popularity: 99, launchOrder: 8 },
-  { id: 'velvet', name: 'T-ÉLIXIR Velvet', inspiredBy: 'Inspired by Maison Francis Kurkdjian Oud Satin Mood', price: 379, categories: ['Women', 'Unisex', 'Limited Edition'], rating: 4.7, popularity: 88, launchOrder: 3 },
-  { id: 'imperial', name: 'T-ÉLIXIR Imperial', inspiredBy: 'Inspired by Louis Vuitton Imagination', price: 419, categories: ['Men', 'New Arrivals'], rating: 4.8, popularity: 92, launchOrder: 7 },
-  { id: 'eclipse', name: 'T-ÉLIXIR Éclipse', inspiredBy: 'Inspired by Chanel Bleu de Chanel', price: 329, categories: ['Men', 'Unisex'], rating: 4.6, popularity: 84, launchOrder: 2 },
-  { id: 'mystic', name: 'T-ÉLIXIR Mystic', inspiredBy: 'Inspired by Dior Ambre Nuit', price: 389, categories: ['Women', 'Unisex', 'Limited Edition'], rating: 4.8, popularity: 90, launchOrder: 6 },
-  { id: 'infinity', name: 'T-ÉLIXIR Infinity', inspiredBy: 'Inspired by Byredo Bal d’Afrique', price: 359, categories: ['Women', 'Unisex', 'New Arrivals'], rating: 4.7, popularity: 91, launchOrder: 1 },
+  { id: 'noir', name: 'T-ÉLIXIR Noir', inspiredBy: 'Inspired by Tom Ford Ombre Leather', price: 299, categories: ['Men', 'Unisex', 'Best Sellers'], rating: 4.9, popularity: 98, launchOrder: 5, image: productImageA },
+  { id: 'royal', name: 'T-ÉLIXIR Royal', inspiredBy: 'Inspired by Creed Aventus', price: 399, categories: ['Men', 'Best Sellers'], rating: 4.8, popularity: 96, launchOrder: 4, image: productImageB },
+  { id: 'gold', name: 'T-ÉLIXIR Gold', inspiredBy: 'Inspired by Baccarat Rouge 540', price: 349, categories: ['Women', 'Unisex', 'Best Sellers'], rating: 4.9, popularity: 99, launchOrder: 8, image: productImageC },
+  { id: 'velvet', name: 'T-ÉLIXIR Velvet', inspiredBy: 'Inspired by Maison Francis Kurkdjian Oud Satin Mood', price: 379, categories: ['Women', 'Unisex', 'Limited Edition'], rating: 4.7, popularity: 88, launchOrder: 3, image: productImageD },
+  { id: 'imperial', name: 'T-ÉLIXIR Imperial', inspiredBy: 'Inspired by Louis Vuitton Imagination', price: 419, categories: ['Men', 'New Arrivals'], rating: 4.8, popularity: 92, launchOrder: 7, image: productImageE },
+  { id: 'eclipse', name: 'T-ÉLIXIR Éclipse', inspiredBy: 'Inspired by Chanel Bleu de Chanel', price: 329, categories: ['Men', 'Unisex'], rating: 4.6, popularity: 84, launchOrder: 2, image: productImageF },
+  { id: 'mystic', name: 'T-ÉLIXIR Mystic', inspiredBy: 'Inspired by Dior Ambre Nuit', price: 389, categories: ['Women', 'Unisex', 'Limited Edition'], rating: 4.8, popularity: 90, launchOrder: 6, image: productImageG },
+  { id: 'infinity', name: 'T-ÉLIXIR Infinity', inspiredBy: 'Inspired by Byredo Bal d’Afrique', price: 359, categories: ['Women', 'Unisex', 'New Arrivals'], rating: 4.7, popularity: 91, launchOrder: 1, image: productImageH },
+  { id: 'aura', name: 'T-ÉLIXIR Aura', inspiredBy: 'Inspired by Jo Malone Wood Sage & Sea Salt', price: 369, categories: ['Women', 'Unisex', 'New Arrivals'], rating: 4.7, popularity: 85, launchOrder: 9, image: productImageI },
+  { id: 'onyx', name: 'T-ÉLIXIR Onyx', inspiredBy: 'Inspired by Yves Saint Laurent Black Opium', price: 389, categories: ['Women', 'Limited Edition'], rating: 4.6, popularity: 82, launchOrder: 10, image: productImageJ },
 ]
 
 const sorters: Record<SortOption, (left: Fragrance, right: Fragrance) => number> = {
@@ -143,7 +155,7 @@ export function Collection() {
                       className={`collection-card__wishlist${isWishlisted ? ' is-active' : ''}`}
                       onClick={() => toggleWishlist(fragrance.id)}
                     />
-                    <img src={heroImage} alt={fragrance.name} className="collection-card__image" loading="lazy" />
+                    <img src={fragrance.image} alt={fragrance.name} className="collection-card__image" loading="lazy" />
                   </div>
 
                   <div className="collection-card__content">
